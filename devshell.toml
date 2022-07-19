@@ -1,0 +1,30 @@
+imports = [
+  "language.go"
+]
+
+[devshell]
+
+name = "terraform-provider-nix"
+
+packages = [
+  "diffutils", # used by golangci-lint
+  "goreleaser",
+  "mdbook",
+  "gopls",
+  "mdsh",
+  "webfs",
+  "hyperfine",
+  "nodePackages.yaml-language-server",
+  "terraform",
+  "cue"
+]
+
+[[commands]]
+package = "devshell.cli"
+help = "Per project developer environments"
+
+[[commands]]
+package = "gore"
+
+[language.go]
+package = "go_1_18"
